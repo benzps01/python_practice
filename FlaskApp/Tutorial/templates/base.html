@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width', initial-scale=1.0>
+        <title>Flask App</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+        <script src='{{url_for("static", filename="js/base.js")}}' defer></script>
+        {% block css %}{% endblock css %}
+        {% block js %}{% endblock js %}
+    </head>
+    <body>
+        <header class='header-container'>
+            <a href='/'><h2 class='header-title'>Flask Project</h2></a>
+            <nav class='navigation-container'>
+                <ul>
+                    <a href='/login'><li class='link'>Sign In</li></a>
+                    <a href='/register'><li class='link'>Sign Up</li></a>
+                    <a href='/profile'><li class='link'>Profile</li></a>
+                    <a href='/logout'><li class='link'>Sign Out</li></a>
+                </ul>
+            </nav>
+        </header>
+
+        {% block body_content %}{% endblock body_content %}
+
+        <footer class='footer-container'>
+            <p class='footer-details'>Let's Build it!!!!</p>
+        </footer>
+    </body>
+</html>
